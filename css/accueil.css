@@ -1,79 +1,94 @@
 /*==================================
 ============== SLIDER ==============
 ==================================*/
-div#containerAll {
+#start-container {
   width: 1510px;
   position: relative;
 }
-ul#slide li {
-  float: left;
+#start-subcontainer {
+  width: 1510px;
+  position: relative;
+}
+#start-slide {
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
-ul#slide li:not(:last-child) {
+#start-slide li {
+  float: left;
   margin-right: 60px;
 }
-ul#slide li:first-child {
-  margin-left: -40px;
-}
-ul#slide li:last-child {
+#start-slide li:last-child {
   margin-right: 100px;
 }
-@media all and (max-width: 1050px) {
-  div#containerAll {
+@media all and (max-width: 1200px) {
+  #start-subcontainer {
     width: 1430px;
   }
-  ul#slide li:last-child {
+  #start-slide li:last-child {
     margin-right: 20px;
   }
 }
+@media all and (max-width: 1050px) {
+  #start-container {
+    width: 1430px;
+  }
+  #start-slide li:last-child {
+    margin-right: 20px;
+  }
+}
+@media all and (max-width: 700px) {
+  #start-subcontainer {
+    width: 1415px;
+  }
+  #start-slide li:last-child {
+    margin-right: 5px;
+  }
+}
 @media all and (max-width: 350px) {
-  #containerAll {
+  #start-subcontainer {
     width: 100% !important;
   }
-  #slide {
-    padding: 0;
-    margin: 0;
-  }
-  #slide li {
+  #start-slide li {
     margin: 0 !important;
   }
-  .containerTiles {
+  .tile-container {
     width: 100%;
   }
 }
 /*==================================
 =============== TILES ==============
 ==================================*/
-div.bigTile,
-div.smallTile {
+.tile-big,
+.tile-small {
   float: left;
   border: solid 3px #dcdcdc;
   margin: 3px;
   height: 120px;
 }
-div.bigTile {
+.tile-big {
   width: 246px;
 }
-div.smallTile {
+.tile-small {
   width: 117px;
 }
 .live-tile,
 .live-tile:hover {
   border: 0 !important;
 }
-.live-tile.smallTile {
-  width: 123px;
+.live-tile.tile-big {
+  width: 252px;
   height: 126px;
 }
-.live-tile.bigTile {
-  width: 252px;
+.live-tile.tile-small {
+  width: 123px;
   height: 126px;
 }
 .live-tile img {
   width: 100% !important;
   height: 100% !important;
 }
-div.tileBlue {
+.tileBlue {
   background: #008299;
   background: -moz-linear-gradient(left, #008299 0%, #009fb3 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #008299), color-stop(100%, #009fb3));
@@ -83,7 +98,7 @@ div.tileBlue {
   background: linear-gradient(to right, #008299 0%, #009fb3 100%);
   border-color: #1a90a4;
 }
-div.tileRed {
+.tileRed {
   background: #ac193d;
   background: -moz-linear-gradient(left, #ac193d 0%, #be1d4a 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #ac193d), color-stop(100%, #be1d4a));
@@ -93,7 +108,7 @@ div.tileRed {
   background: linear-gradient(to right, #ac193d 0%, #be1d4a 100%);
   border-color: #be1d4a;
 }
-div.tileGreen {
+.tileGreen {
   background: #008a00;
   background: -moz-linear-gradient(left, #008a00 0%, #00a500 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #008a00), color-stop(100%, #00a500));
@@ -103,7 +118,7 @@ div.tileGreen {
   background: linear-gradient(to right, #008a00 0%, #00a500 100%);
   border-color: #00a000;
 }
-div.tileBlue2 {
+.tileBlue2 {
   background: #513dab;
   background: -moz-linear-gradient(left, #513dab 0%, #633dbe 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #513dab), color-stop(100%, #633dbe));
@@ -113,7 +128,7 @@ div.tileBlue2 {
   background: linear-gradient(to right, #513dab 0%, #633dbe 100%);
   border-color: #6348b4;
 }
-div.tileBlue3 {
+.tileBlue3 {
   background: #2672ec;
   background: -moz-linear-gradient(left, #2672ec 0%, #2d8cee 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #2672ec), color-stop(100%, #2d8cee));
@@ -123,7 +138,7 @@ div.tileBlue3 {
   background: linear-gradient(to right, #2672ec 0%, #2d8cee 100%);
   border-color: #4191f0;
 }
-div.tileBlue4 {
+.tileBlue4 {
   background: #094ab2;
   background: -moz-linear-gradient(left, #094ab2 0%, #095ac3 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #094ab2), color-stop(100%, #095ac3));
@@ -133,7 +148,7 @@ div.tileBlue4 {
   background: linear-gradient(to right, #094ab2 0%, #095ac3 100%);
   border-color: #236cca;
 }
-div.tileYellow {
+.tileYellow {
   background: #f5b401;
   background: -moz-linear-gradient(left, #f5b401 0%, #f6bb18 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #f5b401), color-stop(100%, #f6bb18));
@@ -143,7 +158,7 @@ div.tileYellow {
   background: linear-gradient(to right, #f5b401 0%, #f6bb18 100%);
   border-color: #fea805;
 }
-div.tileBordeaux {
+.tileBordeaux {
   background: #b71a6b;
   background: -moz-linear-gradient(left, #b71a6b 0%, #be2f79 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #b71a6b), color-stop(100%, #be2f79));
@@ -153,7 +168,7 @@ div.tileBordeaux {
   background: linear-gradient(to right, #b71a6b 0%, #be2f79 100%);
   border-color: #c61c75;
 }
-div.tilePurple {
+.tilePurple {
   background: #8c0095;
   background: -moz-linear-gradient(left, #8c0095 0%, #a600ad 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #8c0095), color-stop(100%, #a600ad));
@@ -163,7 +178,7 @@ div.tilePurple {
   background: linear-gradient(to right, #8c0095 0%, #a600ad 100%);
   border-color: #af1ab5;
 }
-div.tileOrange {
+.tileOrange {
   background: #d24726;
   background: -moz-linear-gradient(left, #d24726 0%, #db562d 100%);
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #d24726), color-stop(100%, #db562d));
@@ -173,11 +188,11 @@ div.tileOrange {
   background: linear-gradient(to right, #d24726 0%, #db562d 100%);
   border-color: #d75a3c;
 }
-p.pTile {
+.tile-legend {
   margin: -5px auto auto 5px;
   color: white;
 }
-p#interets {
+#tile-content-interests {
   width: 246px;
   height: 35px;
   margin-top: 35px;
@@ -186,7 +201,7 @@ p#interets {
   font-size: 25px;
   text-align: center;
 }
-p.citations {
+.tile-content-quotes {
   height: 65px;
   color: white;
   margin-top: 0;
@@ -196,7 +211,7 @@ p.citations {
 /*==================================
 ========= TILES ANIMATIONS =========
 ==================================*/
-div.bigTile:hover,
-div.smallTile:hover {
+.tile-big:hover,
+.tile-small:hover {
   border: solid 3px #c3c3c3;
 }

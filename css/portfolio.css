@@ -1,24 +1,35 @@
 /*==================================
 ============== LAYOUT ==============
 ==================================*/
-#containerAll {
+#start-subcontainer {
   margin-right: 100px;
 }
 @media all and (max-width: 1200px) {
-  #containerAll {
-    margin-right: 28px !important;
+  #start-subcontainer {
+    margin-right: 20px;
   }
 }
 @media all and (max-width: 700px) {
-  #containerAll {
-    margin-right: 5px !important;
+  #start-subcontainer {
+    margin-right: 5px;
   }
 }
-ul.rangee {
+@media all and (max-width: 350px) {
+  #start-subcontainer {
+    width: 100% !important;
+  }
+  #start-slide li {
+    margin: 0 !important;
+  }
+  .tile-container {
+    width: 100%;
+  }
+}
+.pf-list {
   padding: 0;
   list-style-type: none;
 }
-li.item {
+.pf-item {
   float: left;
   width: 25%;
   position: relative;
@@ -29,19 +40,19 @@ li.item {
   box-sizing: border-box;
 }
 @media all and (max-width: 850px) {
-  .item {
+  .pf-item {
     width: 50% !important;
   }
 }
 @media all and (max-width: 500px) {
-  .item {
+  .pf-item {
     width: 100% !important;
   }
 }
 /*==================================
 =============== IMAGES =============
 ==================================*/
-img.imgPortfolio {
+.pf-item-img {
   width: 100%;
   cursor: pointer;
   height: 100%;
@@ -50,36 +61,18 @@ img.imgPortfolio {
   left: 0;
   transition: left 200ms;
 }
-img.big {
-  float: left;
-  width: 748px;
-  min-height: 450px;
-  margin-bottom: 30px;
-  border: solid 1px #c8c8c8;
-}
-.bigNotFirst {
-  margin-left: 10px;
-}
-div.traitPhotos {
-  width: 100%;
-  margin-bottom: 30px;
-  border-top: solid 1px #c3c3c3;
-}
-.item:hover .imgPortfolio {
+.pf-item:hover .pf-item-img {
   left: 125px;
 }
 @media all and (max-width: 1200px) {
-  .item:hover .imgPortfolio {
+  .pf-item:hover .pf-item-img {
     left: 125px !important;
   }
 }
 @media all and (max-width: 1050px) {
-  .item:hover .imgPortfolio {
+  .pf-item:hover .pf-item-img {
     left: 100px !important;
   }
-}
-.item:hover .cover {
-  left: 15px !important;
 }
 .PFpink {
   background-color: #be2f79;
@@ -108,7 +101,7 @@ div.traitPhotos {
 /*==================================
 ============== COVER ===============
 ==================================*/
-div.cover {
+.pf-item-cover {
   position: absolute;
   top: 0;
   left: -175px;
@@ -119,15 +112,18 @@ div.cover {
   text-transform: uppercase;
   transition: left 200ms;
 }
+.pf-item:hover .pf-item-cover {
+  left: 15px !important;
+}
 @media all and (max-width: 1200px) {
-  .cover {
+  .pf-item-cover {
     font-size: 20px !important;
   }
 }
 /*==================================
 =============== TITRES =============
 ==================================*/
-div.PFtitle {
+.pf-item-title {
   width: 100%;
   height: 25px;
   margin-top: 10px;
@@ -137,15 +133,29 @@ div.PFtitle {
   font-size: 15px;
   text-align: center;
 }
+.pf-item-line {
+  width: 75%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: 0;
+  border-bottom: solid 1px #c8c8c8;
+}
+@media all and (max-width: 1200px) {
+  .pf-item-line {
+    margin-top: 25px !important;
+  }
+}
 /*==================================
 ============ DESCRIPTION ===========
 ==================================*/
-div.projectInfos {
+.pf-item-info-container {
   float: left;
   width: 180px;
   font-size: 14px;
+  margin-left: 10px;
 }
-div.projectInfos h5 {
+.pf-item-info-container h5 {
   color: #c3c3c3;
   margin: 0px auto 0px auto;
   font-size: 16px;
@@ -154,36 +164,40 @@ div.projectInfos h5 {
   border-bottom: 1px solid #c8c8c8;
   margin-bottom: 10px;
 }
-div.projectInfos a {
+.pf-item-info-container a {
   color: #d700e1;
 }
-div.projectInfosDescription {
+.pf-item-info-container a:hover {
+  text-decoration: underline;
+}
+.pf-item-info {
   margin-right: 10px;
   margin-bottom: 10px;
 }
-div.projectInfosTechnos {
+.pf-item-info-details {
   padding-top: 10px;
   text-align: left;
 }
 /*==================================
-=============== TRAITS =============
-==================================*/
-div.trait {
-  width: 75%;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  border-bottom: solid 1px #c8c8c8;
-}
-@media all and (max-width: 1200px) {
-  .trait {
-    margin-top: 25px !important;
-  }
-}
-/*==================================
 =========== MODAL & SLIDER =========
 ==================================*/
-button.close {
+.modal {
+  border-radius: 0 !important;
+  width: 900px !important;
+  margin-left: -450px !important;
+  overflow-y: auto;
+}
+.modal-header {
+  border-bottom: 0 !important;
+}
+.modal-header h3 span {
+  margin-bottom: 20px;
+  color: #c3c3c3;
+  font-size: 15px;
+  font-style: italic;
+  text-align: left;
+}
+.modal-header .close {
   width: 30px;
   height: 30px;
   color: #333333;
@@ -194,23 +208,22 @@ button.close {
   font-weight: bold;
   cursor: pointer;
   font-family: "Segoe Light", "Robot Light";
+  line-height: 30px;
+  padding: 0;
+  margin-top: 0 !important;
 }
-.modal {
-  border-radius: 0 !important;
-  width: 900px !important;
-  margin-left: -450px !important;
-  overflow-y: auto;
+.modal-header .close:hover {
+  color: #0b0b0b;
 }
 .modal-body {
   max-height: 470px !important;
   overflow-y: hidden !important;
+  padding-top: 0 !important;
 }
-.modal-header h3 span {
-  margin-bottom: 20px;
-  color: #c3c3c3;
-  font-size: 15px;
-  font-style: italic;
-  text-align: left;
+.slider-wrapper {
+  float: left;
+  width: 75%;
+  height: 400px;
 }
 .nivoSlider {
   position: relative;
@@ -227,13 +240,17 @@ button.close {
   border: 0;
   display: block;
 }
-.slider-wrapper {
-  float: left;
-  width: 75%;
-  height: 400px;
+.nivo-directionNav {
+  display: none !important;
 }
-div.nivo-directionNav a {
+.nivo-directionNav a {
   background-color: #c8c8c8 !important;
+}
+.nivo-directionNav a:hover {
+  background-color: #c3c3c3 !important;
+}
+.nivo-controlNav {
+  text-align: center !important;
 }
 @media all and (max-width: 900px) {
   .modal {
@@ -251,47 +268,18 @@ div.nivo-directionNav a {
     height: auto;
     margin-left: -10px;
   }
-  .projectInfos {
+  .pf-item-info-container {
     width: 100% !important;
   }
-  .projectInfosDescription {
+  .pf-item-info {
     margin-right: 0 !important;
   }
-  .projectInfosTechnos {
+  .pf-item-info-details {
     padding-bottom: 10px;
   }
   .nivo-caption {
     font-size: 14px !important;
   }
-}
-/*==================================
-============ ANIMATIONS ============
-==================================*/
-div.projectInfos a:hover {
-  text-decoration: underline;
-}
-div.nivo-directionNav a:hover {
-  background-color: #c3c3c3 !important;
-}
-.modal-header {
-  border-bottom: 0 !important;
-}
-.modal-header .close {
-  line-height: 30px;
-  padding: 0;
-  margin-top: 0 !important;
-}
-.nivo-directionNav {
-  display: none !important;
-}
-button.close:hover {
-  color: #0b0b0b;
-}
-.nivo-controlNav {
-  text-align: center !important;
-}
-.modal-body {
-  padding-top: 0 !important;
 }
 /*==================================
 ============ SELECTION =============
